@@ -131,6 +131,15 @@ class Application
     {
         //TODO: write here your own code if you want to manipulate controller, action
 
+
+        // Enable search controller to have the parameter in URL where
+        // otherwise an action would have been
+        if ($this->controller == 'search') {
+            $this->params[0] = $this->action;
+            $this->action = 'index';
+
+        }
+
         // Allow shorter URLs (users/view/3 becomes users/3)
         if (is_numeric($this->action)) {
 
@@ -140,6 +149,7 @@ class Application
             // Overwrite action to view
             $this->action = 'view';
         }
+
 
     }
 
