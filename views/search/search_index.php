@@ -4,11 +4,15 @@
     <button id="txtMovieSubmit">Search</button>
 </p>
 <ul class="list-group">
-    <? foreach ($movies as $movie): ?>
-        <li class="list-group-item">
-            <a href="movies/<?= $movie['movie_id'] ?>/<?= $movie['movie_name'] ?>"><?= $movie['movie_name'] ?></a>
-        </li>
-    <? endforeach ?>
+    <? if (count($movies) > 0): ?>
+        <? foreach ($movies as $movie): ?>
+            <li class="list-group-item">
+                <a href="movies/<?= $movie['movie_id'] ?>/<?= $movie['movie_name'] ?>"><?= $movie['movie_name'] ?></a>
+            </li>
+        <? endforeach ?>
+    <? else: ?>
+        <div class="alert alert-danger">Movie not found</div>
+    <? endif ?>
 </ul>
 
 <?php if ($auth->is_admin): ?>
