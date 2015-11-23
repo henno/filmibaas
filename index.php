@@ -2,7 +2,7 @@
 
 // Project constants
 define('PROJECT_NAME', 'halo');
-define('DEFAULT_CONTROLLER', 'welcome');
+define('DEFAULT_CONTROLLER', 'movies');
 define('DEBUG', false);
 
 // Load app
