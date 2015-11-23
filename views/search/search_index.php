@@ -1,6 +1,6 @@
 <h3>movie</h3>
 <p>
-    <input id="txtMovie" type="text" placeholder="Search for a movie" name="movie">
+    <input id="txtMovie" type="text" placeholder="Search for a movie" name="movie" value="<?= $movie_name ?>">
     <button id="txtMovieSubmit">Search</button>
 </p>
 <ul class="list-group">

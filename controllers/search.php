@@ -5,9 +5,8 @@ class search extends Controller
 
     function index()
     {
-        $movie_name = $this->params[0];
-        var_dump("SELECT * FROM movie WHERE movie_name LIKE '%$movie_name%'");
-        $this->movies = get_all("SELECT * FROM movie WHERE movie_name LIKE '%$movie_name%'");
+        $this->movie_name = $this->params[0];
+        $this->movies = get_all("SELECT * FROM movie WHERE movie_name LIKE '%{$this->movie_name}%'");
     }
 
     function view()
